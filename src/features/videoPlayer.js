@@ -1,3 +1,4 @@
+import LocomotiveScroll from 'locomotive-scroll'
 import Plyr from 'plyr';
 import Swiper from 'swiper/bundle'
 import 'swiper/css/bundle'
