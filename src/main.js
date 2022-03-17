@@ -1,3 +1,7 @@
+import Swiper from 'swiper/bundle'
+import 'swiper/css/bundle'
+import gsap from 'gsap'
+import Plyr from 'plyr';
 import './styles/style.css'
 import slider from './features/slider.js'
 import videoPlayer from './features/videoPlayer.js'
