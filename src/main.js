@@ -19,4 +19,4 @@ if(isResume) {
   scroll()
 }
 
-
+console.log('hello')
