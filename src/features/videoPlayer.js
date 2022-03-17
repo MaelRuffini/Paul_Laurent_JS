@@ -6,6 +6,17 @@ import gsap from "gsap";
 function videoPlayer() 
 {
 
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('.main'),
+    smooth: true,
+    smartphone: {
+      smooth: true
+    },
+    tablet: {
+      smooth: true
+    },
+  }); 
+
       const player = new Plyr('#player',{
         clickToPlay: true,
         keyboard: true,
