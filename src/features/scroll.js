@@ -63,8 +63,8 @@ dividers.forEach( divider => {
          toggleActions: "play none none reverse"
         //  end: "top top",
   }})
-    tl.from(divider, {
-    width: '0%',
+    tl.to(divider, {
+    width: '100%',
     duration: 0.8,
     ease: 'power2.easeOut'
     })
