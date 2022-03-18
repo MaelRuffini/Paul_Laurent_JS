@@ -17,17 +17,15 @@ function slider()
         keyboard: {
             enabled: true,
           },
-      //   effect: 'creative',
-      //   creativeEffect: {
-      //   prev: {
-      //     // will set `translateZ(-400px)` on previous slides
-      //     translate: [0, '-20%', -0.2],
-      //   },
-      //   next: {
-      //     // will set `translateX(100%)` on next slides
-      //     translate: [0, '100%', 0.2],
-      //   },
-      // },
+        effect: 'creative',
+        creativeEffect: {
+        prev: {
+          translate: [0, 0, -0.2],
+        },
+        next: {
+          translate: [0, '100%', 0.2],
+        },
+      },
       })
     
       // swiper.on('transitionStart', function () {
@@ -58,12 +56,12 @@ function slider()
         let currentHeading = currenSlide('.home__hero__heading')
         let currentDivider = currenSlide('.home__hero__divider')
         let currentSubHeading = currenSlide('.home__hero__sub-heading')
-        gsap.fromTo(nextVideo, { y: -600, scale: 1.2 },{ y: 0, scale: 1, duration: 1.2, ease: 'power3.easeOut' } )
-        gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3, ease: 'power3.easeInOut' } )
-        gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2, ease: 'power3.easeInOut' } )
-        gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2, ease: 'power3.easeOut'} )
-        gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.3, ease: 'power2.easeOut' })
-        gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3, ease: 'power2.easeOut'} )
+        gsap.fromTo(nextVideo, { y: -600, scale: 1.2 },{ y: 0, scale: 1, duration: 1.2 } )
+        gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3 } )
+        gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2 } )
+        gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2 } )
+        gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.3 })
+        gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3 } )
       });
     
 }
