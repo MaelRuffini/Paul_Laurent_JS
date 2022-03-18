@@ -39,10 +39,6 @@ input, textarea, select {
 	height: 100vh;
 }
 
-.swiper-pagination {
-	transition-timing-function: ease-in-out;
-}
-
 /* Plyr */
 
 .plyr--video {
