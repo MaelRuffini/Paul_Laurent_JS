@@ -18,53 +18,53 @@ function slider()
             enabled: true,
           },
         effect: 'creative',
-        creativeEffect: {
-        prev: {
-          // will set `translateZ(-400px)` on previous slides
-          translate: [0, '-20%', -0.2],
-        },
-        next: {
-          // will set `translateX(100%)` on next slides
-          translate: [0, '100%', 0.2],
-        },
-      },
+      //   creativeEffect: {
+      //   prev: {
+      //     // will set `translateZ(-400px)` on previous slides
+      //     translate: [0, '-20%', -0.2],
+      //   },
+      //   next: {
+      //     // will set `translateX(100%)` on next slides
+      //     translate: [0, '100%', 0.2],
+      //   },
+      // },
       })
     
-      swiper.on('transitionStart', function () {
-        var videos = document.querySelectorAll('video');
-        Array.prototype.forEach.call(videos, function(video){
-        video.pause();
-        });
-      });
+      // swiper.on('transitionStart', function () {
+      //   var videos = document.querySelectorAll('video');
+      //   Array.prototype.forEach.call(videos, function(video){
+      //   video.pause();
+      //   });
+      // });
     
-      swiper.on('transitionEnd', function () {
-        var activeIndex = this.activeIndex;
-        var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
-        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
-        activeSlideVideo.play();
-      });
+      // swiper.on('transitionEnd', function () {
+      //   var activeIndex = this.activeIndex;
+      //   var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+      //   var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+      //   activeSlideVideo.play();
+      // });
     
-      swiper.on('slideChange', function () {
-        let nextSlide = gsap.utils.selector('.swiper-slide-next');
-        let prevSlide = gsap.utils.selector('.swiper-slide-prev');
-        let currenSlide = gsap.utils.selector('.swiper-slide-active');
-        let nextVideo = nextSlide('.home__hero__video')
-        let nextHeading = nextSlide('.home__hero__heading')
-        let nextDivider = nextSlide('.home__hero__divider')
-        let nextSubHeading = nextSlide('.home__hero__sub-heading')
-        let prevHeading = prevSlide('.home__hero__heading')
-        let prevDivider = prevSlide('.home__hero__divider')
-        let prevSubHeading = prevSlide('.home__hero__sub-heading')
-        let currentHeading = currenSlide('.home__hero__heading')
-        let currentDivider = currenSlide('.home__hero__divider')
-        let currentSubHeading = currenSlide('.home__hero__sub-heading')
-        gsap.fromTo(nextVideo, { y: -600, scale: 1.2 },{ y: 0, scale: 1, duration: 1.2, ease: 'power3.easeOut' } )
-        gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3, ease: 'power3.easeInOut' } )
-        gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2, ease: 'power3.easeInOut' } )
-        gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2, ease: 'power3.easeOut'} )
-        gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.3, ease: 'power2.easeOut' })
-        gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3, ease: 'power2.easeOut'} )
-      });
+      // swiper.on('slideChange', function () {
+      //   let nextSlide = gsap.utils.selector('.swiper-slide-next');
+      //   let prevSlide = gsap.utils.selector('.swiper-slide-prev');
+      //   let currenSlide = gsap.utils.selector('.swiper-slide-active');
+      //   let nextVideo = nextSlide('.home__hero__video')
+      //   let nextHeading = nextSlide('.home__hero__heading')
+      //   let nextDivider = nextSlide('.home__hero__divider')
+      //   let nextSubHeading = nextSlide('.home__hero__sub-heading')
+      //   let prevHeading = prevSlide('.home__hero__heading')
+      //   let prevDivider = prevSlide('.home__hero__divider')
+      //   let prevSubHeading = prevSlide('.home__hero__sub-heading')
+      //   let currentHeading = currenSlide('.home__hero__heading')
+      //   let currentDivider = currenSlide('.home__hero__divider')
+      //   let currentSubHeading = currenSlide('.home__hero__sub-heading')
+      //   gsap.fromTo(nextVideo, { y: -600, scale: 1.2 },{ y: 0, scale: 1, duration: 1.2, ease: 'power3.easeOut' } )
+      //   gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3, ease: 'power3.easeInOut' } )
+      //   gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2, ease: 'power3.easeInOut' } )
+      //   gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2, ease: 'power3.easeOut'} )
+      //   gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.3, ease: 'power2.easeOut' })
+      //   gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3, ease: 'power2.easeOut'} )
+      // });
     
 }
 
