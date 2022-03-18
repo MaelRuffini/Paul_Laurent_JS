@@ -44,11 +44,6 @@ input, textarea, select {
 	height: 47vw;
 }
 
-.swiper-slide {
-	--webkit-transform: translateZ(0);
-	--webkit-backface-visibility: hidden;
-}
-
 /* Plyr */
 
 .plyr--video {
