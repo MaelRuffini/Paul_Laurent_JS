@@ -39,19 +39,21 @@ input, textarea, select {
 	height: 100vh;
 }
 
-/* Plyr */
-
-.plyr--video {
-	height: 100%;
-}
-
 .swiper--cs {
 	width: 100%;
 	height: 47vw;
 }
 
+.swiper-slide {
+	--webkit-transform: translateZ(0);
+	--webkit-backface-visibility: hidden;
+}
 
+/* Plyr */
 
+.plyr--video {
+	height: 100%;
+}
 
 /* Scroll */
 
