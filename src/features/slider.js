@@ -18,16 +18,16 @@ function slider()
             enabled: true,
           },
         effect: 'creative',
-        creativeEffect: {
-        prev: {
-          // will set `translateZ(-400px)` on previous slides
-          translate: [0, '-20%', -0.2],
-        },
-        next: {
-          // will set `translateX(100%)` on next slides
-          translate: [0, '100%', 0.2],
-        },
-      },
+      //   creativeEffect: {
+      //   prev: {
+      //     // will set `translateZ(-400px)` on previous slides
+      //     translate: [0, '-20%', -0.2],
+      //   },
+      //   next: {
+      //     // will set `translateX(100%)` on next slides
+      //     translate: [0, '100%', 0.2],
+      //   },
+      // },
       })
     
       // swiper.on('transitionStart', function () {
