@@ -17,7 +17,7 @@ function slider()
         keyboard: {
             enabled: true,
           },
-        effect: 'creative',
+      //   effect: 'creative',
       //   creativeEffect: {
       //   prev: {
       //     // will set `translateZ(-400px)` on previous slides
