@@ -17,7 +17,7 @@ if(isCs) {
 
 var isHome = document.querySelector('body').classList.contains('is--home');
 if(isHome) {
-  load()
+  // load()
   home()
 }
 

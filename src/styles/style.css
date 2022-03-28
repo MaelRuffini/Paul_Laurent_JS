@@ -20,11 +20,11 @@ input, textarea, select {
 	overflow: hidden;
 }
 
-.transition_wrapper {
-	display: block
+.transition-wrapper {
+	display: none;
 }
 
-.w-editor .transition_content {
+.w-editor .transition-content {
 	display: none;
 }
 

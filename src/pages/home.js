@@ -27,6 +27,43 @@ function home()
         },
       },
       })
+
+      swiper.on('slideNextTransitionStart', function () {
+        console.log('Next Start')
+        let nextSlide = gsap.utils.selector('.swiper-slide-next');
+        let prevSlide = gsap.utils.selector('.swiper-slide-prev');
+        let currenSlide = gsap.utils.selector('.swiper-slide-active');
+        let currentVideo = currenSlide('.home__hero__video')
+        let prevHeading = prevSlide('.home__hero__heading')
+        let prevDivider = prevSlide('.home__hero__divider')
+        let currentHeading = currenSlide('.home__hero__heading')
+        let currentDivider = currenSlide('.home__hero__divider')
+        let currentSubHeading = currenSlide('.home__hero__sub-heading')
+        gsap.fromTo(currentVideo, { y: -600 },{ y: 0, duration: 1.1 } )
+        gsap.to(prevHeading, { y: -15, opacity: -0 , duration: 0.3 } )
+        gsap.to(prevDivider, { width:'0em', duration: 0.2 } )
+        gsap.to([currentHeading, currentSubHeading], { opacity:0, y:0 })
+        gsap.to(currentDivider, { width:'0em' })
+
+      });
+
+      swiper.on('slideNextTransitionEnd', function () {
+        console.log('Next End')
+        let currenSlide = gsap.utils.selector('.swiper-slide-active');
+        let currentHeading = currenSlide('.home__hero__heading')
+        let currentDivider = currenSlide('.home__hero__divider')
+        let currentSubHeading = currenSlide('.home__hero__sub-heading')
+        gsap.fromTo([currentHeading, currentSubHeading], { opacity:0, y:15 }, {opacity: 1, y: 0, duration: 0.3})
+        gsap.fromTo(currentDivider, { width:'0em' },{ width:'7em', duration: 0.3 } )
+      });
+
+      swiper.on('slidePrevTransitionStart', function () {
+        console.log('Prev Start')
+      });
+
+      swiper.on('slidePrevTransitionEnd', function () {
+        console.log('Prev End')
+      });
     
       swiper.on('transitionStart', function () {
         var videos = document.querySelectorAll('video');
@@ -44,15 +81,15 @@ function home()
     
       // swiper.on('slideChange', function () {
       //   let nextSlide = gsap.utils.selector('.swiper-slide-next');
-      //   // let prevSlide = gsap.utils.selector('.swiper-slide-prev');
+      //   let prevSlide = gsap.utils.selector('.swiper-slide-prev');
       //   let currenSlide = gsap.utils.selector('.swiper-slide-active');
       //   let nextVideo = nextSlide('.home__hero__video')
       //   let nextHeading = nextSlide('.home__hero__heading')
       //   let nextDivider = nextSlide('.home__hero__divider')
       //   let nextSubHeading = nextSlide('.home__hero__sub-heading')
-      //   // let prevHeading = prevSlide('.home__hero__heading')
-      //   // let prevDivider = prevSlide('.home__hero__divider')
-      //   // let prevSubHeading = prevSlide('.home__hero__sub-heading')
+      //   let prevHeading = prevSlide('.home__hero__heading')
+      //   let prevDivider = prevSlide('.home__hero__divider')
+      //   let prevSubHeading = prevSlide('.home__hero__sub-heading')
       //   let currentHeading = currenSlide('.home__hero__heading')
       //   let currentDivider = currenSlide('.home__hero__divider')
       //   let currentSubHeading = currenSlide('.home__hero__sub-heading')
