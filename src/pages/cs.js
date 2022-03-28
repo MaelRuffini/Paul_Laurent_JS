@@ -4,7 +4,7 @@ import Swiper from 'swiper/bundle'
 import 'swiper/css/bundle'
 import gsap from "gsap";
 
-function videoPlayer() 
+function caseStudy() 
 {
 
   const locoScroll = new LocomotiveScroll({
@@ -89,4 +89,4 @@ function videoPlayer()
 
 }
 
-export default videoPlayer
+export default caseStudy

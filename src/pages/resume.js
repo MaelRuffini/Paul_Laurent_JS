@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 
 
-function scroll()
+function resume()
 {
 
   const locoScroll = new LocomotiveScroll({
@@ -78,4 +78,4 @@ ScrollTrigger.refresh();
 
 
 }
-export default scroll
+export default resume

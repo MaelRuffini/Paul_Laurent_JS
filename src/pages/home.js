@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle'
 import 'swiper/css/bundle'
 import gsap from 'gsap'
 
-function slider() 
+function home() 
 {
     const swiper = new Swiper('.swiper', {
         direction: 'vertical',
@@ -56,8 +56,7 @@ function slider()
         let currentHeading = currenSlide('.home__hero__heading')
         let currentDivider = currenSlide('.home__hero__divider')
         let currentSubHeading = currenSlide('.home__hero__sub-heading')
-        gsap.fromTo(nextVideo, { y: -600, scale: 1.2 },{ y: 0, scale: 1, duration: 1.1 } )
-        gsap.fromTo(currenSlide, { y: '0%' },{ y: '100%', scale: 1, duration: 1.2 } )
+        gsap.fromTo(nextVideo, { y: -600 },{ y: 0, duration: 1.1 } )
         gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3 } )
         gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2 } )
         gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2 } )
@@ -69,4 +68,4 @@ function slider()
     
 }
 
-export default slider
+export default home
