@@ -1,5 +1,4 @@
 import gsap from 'gsap'
-import { nodeName } from 'jquery';
 
 function load ()
 {

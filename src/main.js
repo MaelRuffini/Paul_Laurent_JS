@@ -29,7 +29,7 @@ import Plyr from 'plyr';
 
 
 
-const swiper = new Swiper('.swiper', {
+const bgImageSwiper = new Swiper(".swiper.main", {
   direction: "vertical",
   loop: true,
   mousewheel: true,
@@ -40,29 +40,128 @@ const swiper = new Swiper('.swiper', {
   controller: {
     inverse: true
   },
-  parallax: true,
-  // autoplay: {
-  //     delay: 10000,
-  //     disableOnInteraction: false,
-  //   },
-})
+  parallax: true
+});
 
-      // swiper.on('slideChange', function () {
-      //   let nextSlide = gsap.utils.selector('.swiper-slide-next');
-      //   let prevSlide = gsap.utils.selector('.swiper-slide-prev');
-      //   let currenSlide = gsap.utils.selector('.swiper-slide-active');
-      //   let nextHeading = nextSlide('.home__hero__heading')
-      //   let nextDivider = nextSlide('.home__hero__divider')
-      //   let nextSubHeading = nextSlide('.home__hero__sub-heading')
-      //   let prevHeading = prevSlide('.home__hero__heading')
-      //   let prevDivider = prevSlide('.home__hero__divider')
-      //   let prevSubHeading = prevSlide('.home__hero__sub-heading')
-      //   let currentHeading = currenSlide('.home__hero__heading')
-      //   let currentDivider = currenSlide('.home__hero__divider')
-      //   let currentSubHeading = currenSlide('.home__hero__sub-heading')
-      //   gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3 } )
-      //   gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2 } )
-      //   gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2 } )
-      //   gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.1 })
-      //   gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3 } )
-      // });
+const fgImageSwiper = new Swiper(".swiper.small", {
+  direction: "vertical",
+  loop: true,
+  allowTouchMove: false,
+  effect: "slide",
+  speed: 1200,
+  reverseDirection: true,
+  initialSlide: bgImageSwiper.slides.length - 3,
+  parallax: true
+});
+
+// Link background slider to foreground slider
+bgImageSwiper.controller.control = fgImageSwiper;
+
+function setText() {
+	$('.swiper_text').css('transform', 'translateY(100%)');
+  $('.swiper_sub').css('opacity', '0');
+}
+
+// When scrolling down
+bgImageSwiper.on("slideNextTransitionStart", function (e) {
+	setText();
+  // Text leaving
+  let outgoingText = $(".text_item").eq(e.previousIndex - 1);
+  gsap.fromTo(
+    outgoingText.find(".swiper_text"),
+    { y: "0%",
+      opacity: 1,
+    },
+    { y: "-100%",
+    opacity: 0, stagger: { amount: 0.1 }, duration: 0.4, delay: 0 }
+  );
+  // gsap.fromTo(
+  //   outgoingText.find(".swiper_sub"),
+  //   { opacity: 1 },
+  //   { opacity: 0, duration: 0.4, delay: 0 }
+  // );
+  // Text coming in
+  let incomingText = $(".text_item").eq(e.realIndex);
+  gsap.fromTo(
+    incomingText.find(".swiper_text"),
+    { y: "100%",
+      opacity: 0,  
+  },
+    { y: "0%", opacity: 1, stagger: { amount: 0.1 }, duration: 0.4, delay: 1.2 }
+  );
+//   gsap.fromTo(
+//     incomingText.find(".swiper_sub"),
+//     { opacity: 0 },
+//     { opacity: 1, duration: 0.4, delay: 0.8 }
+//   );
+});
+
+// When scrolling up
+bgImageSwiper.on("slidePrevTransitionStart", function (e) {
+	setText();
+  // Text leaving
+  let outgoingText = $(".text_item").eq(e.activeIndex);
+  gsap.fromTo(
+    outgoingText.find(".swiper_text"),
+    { y: "0%",
+      opacity: 1,
+    },
+    {
+      y: "100%",
+      opacity: 0,
+      stagger: { amount: 0.1, from: "end" },
+      duration: 0.4,
+      delay: 0
+    }
+  );
+  // gsap.fromTo(
+  //   outgoingText.find(".swiper_sub"),
+  //   { opacity: 1 },
+  //   { opacity: 0, duration: 0.3, delay: 0 }
+  // );
+  // Text coming in
+  let incomingText = $(".text_item").eq(e.realIndex);
+  gsap.fromTo(
+    incomingText.find(".swiper_text"),
+    {
+      y: "-100%",
+      opacity: 0
+    },
+    {
+      y: "0%",
+      opacity: 1,
+      stagger: { amount: 0.1, from: "end" },
+      duration: 0.4,
+      delay: 1.2
+    }
+  );
+  // gsap.fromTo(
+  //   incomingText.find(".swiper_sub"),
+  //   { opacity: 0 },
+  //   { opacity: 1, duration: 0.3, delay: 1.2 }
+  // );
+});
+
+// Display number for total slide count
+let slideLength = bgImageSwiper.slides.length - 2;
+$(".total").text(("0" + slideLength).slice(-2));
+
+// Update current slide number to display
+bgImageSwiper.on("transitionStart", function (e) {
+  let activeNumer = +e.realIndex + 1;
+  $(".current").text(("0" + activeNumer).slice(-2));
+});
+
+bgImageSwiper.on('transitionStart', function () {
+  var videos = document.querySelectorAll('video');
+  Array.prototype.forEach.call(videos, function(video){
+  video.pause();
+  });
+});
+
+bgImageSwiper.on('transitionEnd', function () {
+  var activeIndex = this.activeIndex;
+  var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+  var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+  activeSlideVideo.play();
+});
