@@ -34,15 +34,6 @@ input, textarea, select {
 
 /* Swiper.JS */
 
-.swiper {
-	width: 100vw;
-	height: 100vh;
-}
-
-.swiper--cs {
-	width: 100%;
-	height: 47vw;
-}
 
 /* Plyr */
 
@@ -118,3 +109,12 @@ html.has-scroll-smooth {
 	[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
 	  right: auto;
 	  bottom: 0; }
+
+
+
+	/* Home slider */
+	
+	.hero_center,
+	.hero_content {
+	pointer-events: none;
+	}
