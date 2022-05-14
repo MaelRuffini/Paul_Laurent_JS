@@ -47,22 +47,22 @@ const swiper = new Swiper('.swiper', {
   //   },
 })
 
-      swiper.on('slideChange', function () {
-        let nextSlide = gsap.utils.selector('.swiper-slide-next');
-        let prevSlide = gsap.utils.selector('.swiper-slide-prev');
-        let currenSlide = gsap.utils.selector('.swiper-slide-active');
-        let nextHeading = nextSlide('.home__hero__heading')
-        let nextDivider = nextSlide('.home__hero__divider')
-        let nextSubHeading = nextSlide('.home__hero__sub-heading')
-        let prevHeading = prevSlide('.home__hero__heading')
-        let prevDivider = prevSlide('.home__hero__divider')
-        let prevSubHeading = prevSlide('.home__hero__sub-heading')
-        let currentHeading = currenSlide('.home__hero__heading')
-        let currentDivider = currenSlide('.home__hero__divider')
-        let currentSubHeading = currenSlide('.home__hero__sub-heading')
-        gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3 } )
-        gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2 } )
-        gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2 } )
-        gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.1 })
-        gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3 } )
-      });
+      // swiper.on('slideChange', function () {
+      //   let nextSlide = gsap.utils.selector('.swiper-slide-next');
+      //   let prevSlide = gsap.utils.selector('.swiper-slide-prev');
+      //   let currenSlide = gsap.utils.selector('.swiper-slide-active');
+      //   let nextHeading = nextSlide('.home__hero__heading')
+      //   let nextDivider = nextSlide('.home__hero__divider')
+      //   let nextSubHeading = nextSlide('.home__hero__sub-heading')
+      //   let prevHeading = prevSlide('.home__hero__heading')
+      //   let prevDivider = prevSlide('.home__hero__divider')
+      //   let prevSubHeading = prevSlide('.home__hero__sub-heading')
+      //   let currentHeading = currenSlide('.home__hero__heading')
+      //   let currentDivider = currenSlide('.home__hero__divider')
+      //   let currentSubHeading = currenSlide('.home__hero__sub-heading')
+      //   gsap.fromTo([nextHeading, prevHeading], { y: 15, opacity: 0 },{ y: 0, opacity: 1, delay: 1.2, duration: 0.3 } )
+      //   gsap.fromTo([nextSubHeading, prevSubHeading], { y: 5, opacity: 0 },{ y: 0, opacity: 1, delay: 1.4, duration: 0.2 } )
+      //   gsap.fromTo([nextDivider, prevDivider], { width:'0em' },{ width:'7em', delay: 1.2, duration: 0.2 } )
+      //   gsap.fromTo([currentHeading, currentSubHeading], { opacity:1, y:0 }, {opacity: 0, y: -15, duration: 0.1 })
+      //   gsap.fromTo(currentDivider, { width:'7em' },{ width:'0em', duration: 0.3 } )
+      // });
