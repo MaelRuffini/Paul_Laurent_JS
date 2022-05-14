@@ -27,28 +27,14 @@ function caseStudy()
         direction: 'horizontal',
         noSwipingClass: 'cs__video__image-container',
         mousewheel: false,
-        speed: 900,
+        speed: 1200,
         keyboard: {
             enabled: true,
           },
-          effect: 'creative',
-          creativeEffect: {
-            prev: {
-              translate: ['-5%', 0, -0.2],
-            },
-            next: {
-              translate: ['100%', 0, 0.2],
-            },
-          },
+          effect: 'slide',
+          parallax: true,
       })
 
-    swiperCs.on('slideChange', function () {
-      let nextSlide = gsap.utils.selector('.swiper-slide-next');
-      let prevSlide = gsap.utils.selector('.swiper-slide-prev');
-      let nextImage = nextSlide('.cs__video__image')
-      let prevImage = prevSlide('.cs__video__image')
-      gsap.fromTo(nextImage, { x: -600, scale: 1.1 },{ x: 0, scale: 1, duration: 0.9, ease: 'power3.easeOut' } )
-    });
 
     let slideOne = document.getElementById('slide--one');
     slideOne.addEventListener('click', ()=>{

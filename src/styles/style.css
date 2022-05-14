@@ -114,7 +114,7 @@ html.has-scroll-smooth {
 
 	/* Home slider */
 	
-	.hero_center,
-	.hero_content {
+	.home-hero_poster-wrapper,
+	.home-hero_content {
 	pointer-events: none;
 	}
