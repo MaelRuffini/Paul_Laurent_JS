@@ -34,8 +34,8 @@ function resume()
   pinType: document.querySelector('.main').style.transform ? "transform" : "fixed"
 });
 
-var texts = document.querySelectorAll('.resume__text')
-var dividers = document.querySelectorAll('.resume__divider')
+var texts = document.querySelectorAll('.resume_text')
+var dividers = document.querySelectorAll('.resume_divider')
 
 texts.forEach( text => {
   var tl = gsap.timeline({

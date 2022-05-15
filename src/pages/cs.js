@@ -11,7 +11,7 @@ function caseStudy()
     el: document.querySelector('.main'),
     smooth: true,
     smartphone: {
-      smooth: true
+      smooth: false
     },
     tablet: {
       smooth: true
@@ -24,10 +24,10 @@ function caseStudy()
     })
 
     const swiperCs = new Swiper('.swiper--cs', {
-        direction: 'horizontal',
+        direction: 'vertical',
         noSwipingClass: 'cs__video__image-container',
         mousewheel: false,
-        speed: 1200,
+        speed: 800,
         keyboard: {
             enabled: true,
           },
@@ -76,3 +76,8 @@ function caseStudy()
 }
 
 export default caseStudy
+
+
+
+
+
