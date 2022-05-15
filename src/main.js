@@ -8,20 +8,22 @@ import load from './features/load.js';
 import home from './pages/home.js'
 import caseStudy from './pages/cs.js'
 import resume from './pages/resume.js'
+import transition from './features/transition.js'
 
+transition()
 
-var isCs = document.querySelector('body').classList.contains('is--cs');
-if(isCs) {
-  caseStudy()
-}
-
-var isHome = document.querySelector('body').classList.contains('is--home');
+var isHome = document.querySelector('body').classList.contains('body--home');
 if(isHome) {
   // load()
   home()
 }
 
-var isResume = document.querySelector('body').classList.contains('is--resume');
+var isCs = document.querySelector('body').classList.contains('body--cs');
+if(isCs) {
+  caseStudy()
+}
+
+var isResume = document.querySelector('body').classList.contains('body--resume');
 if(isResume) {
   resume()
 }

@@ -1,7 +1,7 @@
 function transition ()
 {
     
-    let transitionTrigger = $(".transition-trigger");
+    let transitionTrigger = $(".transition_trigger");
     let introDurationMS = 0;
     let exitDurationMS = 1200;
     let excludedClass = "no-transition";
@@ -26,7 +26,7 @@ function transition ()
     window.onpageshow = function(event) {if (event.persisted) {window.location.reload()}};
     // Hide Transition on Window Width Resize
     setTimeout(() => {$(window).on("resize", function () {
-    setTimeout(() => {$(".transition-wrapper").css("display", "none");}, 50);});
+    setTimeout(() => {$(".transition_wrapper").css("display", "none");}, 50);});
     }, introDurationMS);
     
     

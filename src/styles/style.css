@@ -16,21 +16,10 @@ input, textarea, select {
 	background-image: none; 
 }
 
-.disable-scroll{
-	overflow: hidden;
+.transition_wrapper {
+	display: block;
 }
 
-.transition-wrapper {
-	display: none;
-}
-
-.w-editor .transition-content {
-	display: none;
-}
-
-.clickable-off{
-	pointer-events: none;
-}
 
 /* Swiper.JS */
 

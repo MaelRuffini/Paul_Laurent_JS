@@ -11,10 +11,10 @@ function resume()
     el: document.querySelector('.main'),
     smooth: true,
     smartphone: {
-      smooth: false
+      smooth: true
     },
     tablet: {
-      smooth: false
+      smooth: true
     },
   }); 
 

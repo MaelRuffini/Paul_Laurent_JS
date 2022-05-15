@@ -106,7 +106,7 @@ function home()
   
   // Display number for total slide count
   let slideLength = bgImageSwiper.slides.length - 2;
-  $(".total").text(("0" + slideLength).slice(-2));
+  $(".home-hero_poster-text-number-total").text(("0" + slideLength).slice(-2));
   
   // Update current slide number to display
   bgImageSwiper.on("transitionStart", function (e) {
@@ -149,6 +149,12 @@ function home()
     var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
     activeSlideVideo.play();
   });
+
+  // Update current slide number to display
+bgImageSwiper.on("transitionStart", function (e) {
+  let activeNumer = +e.realIndex + 1;
+  $(".home-hero_poster-text--number-display").text(("0" + activeNumer).slice(-2));
+});
     
 }
 
