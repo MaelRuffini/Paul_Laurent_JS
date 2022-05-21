@@ -24,7 +24,7 @@ function home()
     allowTouchMove: false,
     effect: "slide",
     speed: 1200,
-    reverseDirection: true,
+    reverseDirection: false,
     initialSlide: bgImageSwiper.slides.length - 3,
     parallax: true
   });

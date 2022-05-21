@@ -10,66 +10,71 @@ function swiperMode() {
     let desktop = window.matchMedia('(min-width: 1025px)');
 
     // Enable (for mobile)
-    if(mobile.matches) {
+    if(desktop.matches) {
         if (!init) {
             init = true;
-            swiper = new Swiper('.swiper-container', {
-                slidesPerView: 3,
-                autoplay: {
-                    delay: 100,
-                    disableOnInteraction: false,
-                },
-                centeredSlides: true,
-                loop: true,
-                spaceBetween: 10,
+            const swiperCs = new Swiper('.swiper--cs', {
                 direction: 'horizontal',
-                effect: 'coverflow',
-
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-
-                coverflowEffect: {
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 0,
-                    modifier: 0,
-                    slideShadows: false,
-                },
-
-                breakpoints: {
-
-                    767: {
-                        slidesPerView: 1,
-                        spaceBetween: 0,
-                        effect: 'coverflow',
-
-                        coverflowEffect: {
-                            rotate: 0,
-                            stretch: 20,
-                            depth: 120,
-                            modifier: 3,
-                            slideShadows: false,
-                        }
-                    }
-
-                }
-
-            });
+                noSwipingClass: 'cs__video__image-container',
+                mousewheel: false,
+                speed: 1200,
+                keyboard: {
+                    enabled: true,
+                  },
+                  effect: 'slide',
+                  parallax: false,
+              })
+          
+          
+            let slideOne = document.getElementById('slide--one');
+            slideOne.addEventListener('click', ()=>{
+              swiperCs.slideTo(0);
+            })
+          
+            let slideTwo = document.getElementById('slide--two');
+            slideTwo.addEventListener('click', ()=>{
+              swiperCs.slideTo(1);
+            })
+          
+            let slideThree = document.getElementById('slide--three');
+            slideThree.addEventListener('click', ()=>{
+              swiperCs.slideTo(2);
+            })
+          
+            let slideFour = document.getElementById('slide--four');
+            slideFour.addEventListener('click', ()=>{
+              swiperCs.slideTo(3);
+            })
+          
+            let slideFive = document.getElementById('slide--five');
+            slideFive.addEventListener('click', ()=>{
+              swiperCs.slideTo(4);
+            })
+          
+            let slideSix = document.getElementById('slide--six');
+            slideSix.addEventListener('click', ()=>{
+              swiperCs.slideTo(5);
+            })
+          
+            swiperCs.on('transitionStart', function () {
+                var videos = document.querySelectorAll('video');
+                Array.prototype.forEach.call(videos, function(video){
+                video.pause();
+                });
+              }); 
         }
 
     }
 
     // Disable (for tablet)
     else if(tablet.matches) {
-        swiper.destroy();
+        swiperCs.destroy();
         init = false;
     }
 
     // Disable (for desktop)
-    else if(desktop.matches) {
-        swiper.destroy();
+    else if(mobile.matches) {
+        swiperCs.destroy();
         init = false;
     }
 }
