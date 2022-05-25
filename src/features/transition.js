@@ -2,13 +2,15 @@ function transition ()
 {
     
     let transitionTrigger = $(".transition_trigger");
-    let introDurationMS = 0;
+    let introDurationMS = 800;
     let exitDurationMS = 1200;
     let excludedClass = "no-transition";
       
     // On Page Load
     if (transitionTrigger.length > 0) {
-        transitionTrigger.click();
+	transitionTrigger.click();
+	$("body").addClass("no-scroll-transition");
+	setTimeout(() => {$("body").removeClass("no-scroll-transition");}, introDurationMS);
     }
     
     // On Link Click
