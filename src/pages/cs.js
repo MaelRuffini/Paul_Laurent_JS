@@ -80,12 +80,22 @@ function swiperMode() {
             swiperCs.slideTo(5);
           })
         
-          swiperCs.on('transitionStart', function () {
-              var videos = document.querySelectorAll('video');
-              Array.prototype.forEach.call(videos, function(video){
-              video.pause();
-              });
-            }); 
+          // swiperCs.on('transitionStart', function () {
+              
+          // var stopVideos = function () {
+          //     var videos = document.querySelectorAll('iframe, video');
+          //     Array.prototype.forEach.call(videos, function (video) {
+          //       if (video.tagName.toLowerCase() === 'video') {
+          //         video.pause();
+          //       } else {
+          //         var src = video.src;
+          //         video.src = src;
+          //       }
+          //     });
+          //   };
+          //   stopVideos()
+
+          //   }); 
 
   }
 
