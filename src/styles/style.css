@@ -1,5 +1,5 @@
 :root {
-	--plyr-color-main: #4d4d4d;
+	--plyr-color-main: black;
 	--plyr-control-icon-size: 16px;
 }
 
@@ -103,3 +103,6 @@ html.has-scroll-smooth {
 	.home-hero_content {
 	pointer-events: none;
 	}
+
+
+

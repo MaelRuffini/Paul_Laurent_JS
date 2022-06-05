@@ -18,13 +18,10 @@ function caseStudy()
     },
   }); 
 
-      const player = new Plyr('#player',{
-        clickToPlay: true,
-        keyboard: true,
-    })
-
-
-
+  const player = new Plyr('#player',{
+      clickToPlay: true,
+      keyboard: true,
+  })
 
 
 
@@ -79,23 +76,7 @@ function swiperMode() {
           slideSix.addEventListener('click', ()=>{
             swiperCs.slideTo(5);
           })
-        
-          // swiperCs.on('transitionStart', function () {
-              
-          // var stopVideos = function () {
-          //     var videos = document.querySelectorAll('iframe, video');
-          //     Array.prototype.forEach.call(videos, function (video) {
-          //       if (video.tagName.toLowerCase() === 'video') {
-          //         video.pause();
-          //       } else {
-          //         var src = video.src;
-          //         video.src = src;
-          //       }
-          //     });
-          //   };
-          //   stopVideos()
-
-          //   }); 
+      
 
   }
 

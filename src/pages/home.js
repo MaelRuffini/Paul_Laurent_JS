@@ -11,7 +11,7 @@ function home()
     keyboard: true,
     followFinger: false,
     effect: "slide",
-    speed: 1200,
+    speed: 1000,
     controller: {
       inverse: true
     },
@@ -23,7 +23,7 @@ function home()
     loop: true,
     allowTouchMove: false,
     effect: "slide",
-    speed: 1200,
+    speed: 1000,
     reverseDirection: false,
     initialSlide: bgImageSwiper.slides.length - 3,
     parallax: true
@@ -59,7 +59,7 @@ function home()
       { y: "100%",
         opacity: 0,  
     },
-      { y: "0%", opacity: 1, stagger: { amount: 0.1 }, duration: 0.4, delay: 1.2 }
+      { y: "0%", opacity: 1, stagger: { amount: 0.1 }, duration: 0.4, delay: 1 }
     );
 
   });
@@ -98,7 +98,7 @@ function home()
         opacity: 1,
         stagger: { amount: 0.1, from: "end" },
         duration: 0.4,
-        delay: 1.2
+        delay: 1
       }
     );
 
@@ -123,7 +123,7 @@ function home()
       },
       {
         width: "0px",
-        duration: 0.6
+        duration: 0.4
       }
     );
     var videos = document.querySelectorAll('video');
@@ -141,7 +141,26 @@ function home()
       },
       {
         width: "7em",
-        duration: 0.6
+        duration: 0.4
+      }
+    );
+    var activeIndex = this.activeIndex;
+    var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+    var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+    activeSlideVideo.play();
+  });
+
+
+  bgImageSwiper.on('transitionEnd', function () {
+    let divider = document.querySelectorAll('.home-hero_divider')
+    gsap.fromTo(
+      divider,
+      {
+        width: "0px",
+      },
+      {
+        width: "7em",
+        duration: 0.4
       }
     );
     var activeIndex = this.activeIndex;
